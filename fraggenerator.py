@@ -49,4 +49,5 @@ elif mode=="advanced":
     f.write('\n')
     f.close()
 else:
+    f.close()
     raise ValueError("Invalid mode.")

@@ -11,7 +11,7 @@ for i in range(0,36000):
     def genAmmo():
         return [s.choice(['bullet','drone','swarm_drone','bee','overdrive','revitalist','navyist','whirlybird','trap','block','boomerang','sikerblock','laserline','ionlaser','apbullet','shellingbullet','missile','empmissile','nuke','empnuke','railgunslug','heavynuke','heavyempnuke','donutbullet','kbbullet','oapp_heatseeker','oappblackhole','ceptioner','ceptionist','missile','bomb','stabilizer','pillbox','trapboxes','taurusportal','minion','sunchip','oxyprojectile','laserblast']),fractions.Fraction(s.randint(1,60),6),fractions.Fraction(s.randint(1,60),6)]
     def genEffect():
-        return[s.choice(['none','slide '+str(s.randint(5,72))+' of the Tank Effect Sheet']),'Level: '+str(s.randint(1,12)),'Time: '+str(s.randint(1,3600))+' s']
+        return[s.choice(['none','slide '+str(s.randint(5,73))+' of the Tank Effect Sheet']),'Level: '+str(s.randint(1,12)),'Time: '+str(s.randint(1,3600))+' s']
     def genPattern():
         def ConcentricCircleGen():
             l=[]

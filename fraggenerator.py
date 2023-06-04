@@ -44,7 +44,11 @@ for i in range(0,36000):
     elif mode=="advanced":
         l=[]
         for i in range(s.randint(minLayers,maxLayers+1)):
-            l.append(['Calculated from Pattern',genAmmo(),genEffect(),genPattern()])
+            g=genPattern()
+            if g!='none':
+                l.append(['Calculated from Pattern',genAmmo(),genEffect(),g])
+            else:
+                l.append([s.randint(minFragNumber,maxFragNumber+1),genAmmo(),genEffect(),g])
         f.write(str(l))
         f.write('\n')
     else:

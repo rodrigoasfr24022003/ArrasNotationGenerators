@@ -19,7 +19,7 @@ if mode=="simple":
 elif mode=="advanced":
     l=[]
     for i in range(s.randint(minLayers,maxLayers+1)):
-        l.append([s.randint(minFragNumber,maxFragNumber+1)])
+        l.append([s.randint(minFragNumber,maxFragNumber+1),genAmmo()])
     f.write(str(l))
     f.write('\n')
     f.close()

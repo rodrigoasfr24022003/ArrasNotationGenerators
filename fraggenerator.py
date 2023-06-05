@@ -27,13 +27,18 @@ for i in range(0,36000):
             return l
         def TwoDimGen():
             l1=[]
+            dim2=s.randint(2,37)
             for i in range(1,s.randint(2,37)):
                 l2=[]
-                for j in range(1,s.randint(2,37)): 
+                for j in range(1,dim2): 
                     l2.append(s.randint(0,1))
                 l1.append(l2)
             return l1
-        patterntype=s.choice(['none',s.choice(['rect'+str([s.randint(1,36),s.randint(1,36)]),'tri_'+s.choice(['l','f','r','b'])+str([s.randint(1,36),s.randint(1,36)]),'concentric_circles'+str(ConcentricCircleGen()),'line'+str([s.randint(1,36)]),'chevron'+str([2*s.randint(1,36)+1]),'cross'+str([4*s.randint(1,36)+1]),'advsquarepattern'+str(TwoDimGen())])])
+        def LinPatternGen():
+            l1=[]
+            for i in range (1,s.randint(2,37)):
+                l1.append(s.randint(1,36*i+1))
+        patterntype=s.choice(['none',s.choice(['rect'+str([s.randint(1,36),s.randint(1,36)]),'tri_'+s.choice(['l','f','r','b'])+str([s.randint(1,36),s.randint(1,36)]),'concentric_circles'+str(ConcentricCircleGen()),'line'+str([s.randint(1,36)]),'chevron'+str([2*s.randint(1,36)+1]),'cross'+str([4*s.randint(1,36)+1]),'advsquarepattern'+str(TwoDimGen()),'advlinpattern'+str(LinPatternGen())])])
         return patterntype
     if mode=="simple":
         l=[]

@@ -1,0 +1,8 @@
+- You can mess with the code however you want. Yes, this includes copying this code into your repositories character-by character. Yes, this includes "borrowing" the code for personal use. Yes, this includes forking the code.
+    - Please raise an issue if you feel like you can improve the original source. It is not obligatory to contribute back to the original source by the way.
+- Feel free to use results from awpshapegen.py, rsbngen.py and shaperng.py without any reprecussions.
+    - Just ask me if it's OK to use particular fraggenrator.py results on Arras servers in my Discord DMs or my email (rodrigo.rodrigues.rr.acc2@gmail.com).
+        - If your fork does not contain the following ammo types in the return list of genAmmo() function then it's ok to use the results of said fork of fraggenerator.py:
+            - 'oapp_heatseeker'
+            - 'oappblackhole'
+            - 'taurusportal'

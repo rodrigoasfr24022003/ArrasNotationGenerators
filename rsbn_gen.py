@@ -22,7 +22,7 @@ def GenerateProperRSBN(layeramount=1):
         return l
     elif layeramount==1:
         return GenerateRSBN(36)
-for j in range(0,1000000):
+for j in range(0,100):
     f.write(str((GenerateProperRSBN(random.choices([1,2,3,4],[1/6,1,1/120,1/5040],k=1)[0]))))
     f.write('\n')
 f.close()

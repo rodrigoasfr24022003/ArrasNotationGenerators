@@ -2,7 +2,7 @@ import random
 import fractions
 s=random.SystemRandom()
 f=open('fraggenresults.txt','w')
-for i in range(0,36000):
+for i in range(0,100):
     mode="advanced"
     maxFragNumber=36
     minFragNumber=1

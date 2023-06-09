@@ -15,7 +15,7 @@ def Generate2DPoint(FixedX=None, FixedY=None, xmax=xcmax, ymax=ycmax, xmin=-xcma
         t=(s.randint(xmin,xmax),s.randint(ymin,ymax))
     return t
 f=open('polygons.txt','w')
-for i in range(1024):
+for i in range(100):
     shape=[]
     sym=s.choices(['none','2wayx','2wayy','double2way'],weights=[0.1,0.3,0.3,0.3],k=1)[0]
     shape.append(sym)

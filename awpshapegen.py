@@ -88,7 +88,7 @@ def GenerateSidePolygons(sides,size):
 
 f=open('generatedawpshapes.txt','w', encoding='utf-8')        
 
-for i in range(10000):
+for i in range(100):
     g1=GeneratePolygon()
     g=GenerateSidePolygons(g1.getSides(),g1.getSize())
     l=[str(g1),g]

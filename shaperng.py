@@ -11,6 +11,44 @@ def Generate2DPoint(FixedX=None, FixedY=None, xmax=xcmax, ymax=ycmax, xmin=-xcma
         t=(FixedX,s.randint(ymin,ymax))
     elif FixedX==None and FixedY!=None:
         t=(s.randint(xmin,xmax),FixedY)
+    elif fill==1:
+        if diag==1:
+            posx=s.randint(xmin,xmax)
+            t=(s.randint(xmin,posx),s.randint(posx,ymax))
+        elif diag==-1:
+            posx=s.randint(xmin,xmax)
+            t=(s.randint(xmin,posx),s.randint(ymin,-posx))
+        elif knight==1:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*xmin,2*posx),s.randint(posx,ymax))
+        elif knight==-1:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*xmin,2*posx),s.randint(ymin,posx))
+        elif knight==2:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*xmin,posx),s.randint(2*posx,2*ymax))
+        elif knight==-2:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*xmin,posx),s.randint(2*ymin,-2*posx))
+    elif fill==-1:
+        if diag==1:
+            posx=s.randint(xmin,xmax)
+            t=(s.randint(posx,xmax),s.randint(ymin,posx))
+        elif diag==-1:
+            posx=s.randint(xmin,xmax)
+            t=(s.randint(posx,xmax),s.randint(posx,-ymax))
+        elif knight==1:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*posx,2*xmax),s.randint(ymin,posx))
+        elif knight==-1:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(2*posx,2*xmax),s.randint(posx,ymax))
+        elif knight==2:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(posx,xmax),s.randint(2*ymin,2*posx))
+        elif knight==-2:
+            posx=s.randint(2*xmin,2*xmax)
+            t=(s.randint(posx,xmax),s.randint(-2*posx,-2*ymax))
     elif doublefill==1 and diag!=0:
             posx=s.randint(-xmax,xmax)
             if posx<0:
@@ -51,49 +89,11 @@ def Generate2DPoint(FixedX=None, FixedY=None, xmax=xcmax, ymax=ycmax, xmin=-xcma
         elif knight==-2:
             posx=s.randint(2*xmin,2*xmax)
             t=(posx,-2*posx)
-    elif fill==1:
-        if diag==1:
-            posx=s.randint(xmin,xmax)
-            t=(s.randint(xmin,posx),s.randint(posx,ymax))
-        elif diag==-1:
-            posx=s.randint(xmin,xmax)
-            t=(s.randint(xmin,posx),s.randint(ymin,-posx))
-        elif knight==1:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*xmin,2*posx),s.randint(posx,ymax))
-        elif knight==-1:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*xmin,2*posx),s.randint(ymin,posx))
-        elif knight==2:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*xmin,posx),s.randint(2*posx,2*ymax))
-        elif knight==-2:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*xmin,posx),s.randint(2*ymin,-2*posx))
-    elif fill==-1:
-        if diag==1:
-            posx=s.randint(xmin,xmax)
-            t=(s.randint(posx,xmax),s.randint(ymin,posx))
-        elif diag==-1:
-            posx=s.randint(xmin,xmax)
-            t=(s.randint(posx,xmax),s.randint(posx,-ymax))
-        elif knight==1:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*posx,2*xmax),s.randint(ymin,posx))
-        elif knight==-1:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(2*posx,2*xmax),s.randint(posx,ymax))
-        elif knight==2:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(posx,xmax),s.randint(2*ymin,2*posx))
-        elif knight==-2:
-            posx=s.randint(2*xmin,2*xmax)
-            t=(s.randint(posx,xmax),s.randint(-2*posx,-2*ymax))
     else:
         t=(s.randint(xmin,xmax),s.randint(ymin,ymax))
     return t
 f=open('polygon3.txt','w')
-for i in range(256):
+for i in range(1024):
     shape=[]
     sym=s.choices(['none','2wayx','2wayy','double2way','diag','antidiag','doublediag','octangular'],weights=[1,4,4,4,3,3,3,3],k=1)[0]
     shape.append(sym)
@@ -153,7 +153,7 @@ for i in range(256):
         for i1 in range(fixedn):
             sp.append(Generate2DPoint(None,None,xcmax,ycmax,-xcmax,-ycmax,diag=1))
         for i in range(points-fixedn):
-            sp.append(Generate2DPoint(None,None,xcmax,ycmax,0,-ycmax, diag=1, fill=1))
+            sp.append(Generate2DPoint(None,None,xcmax,ycmax,-xcmax,-ycmax, diag=1, fill=1))
         shape.append(sp)
         sl=[]
         for j in range(points):
@@ -165,7 +165,7 @@ for i in range(256):
         for i1 in range(fixedn):
             sp.append(Generate2DPoint(None,None,xcmax,ycmax,-xcmax,-ycmax,diag=-1))
         for i in range(points-fixedn):
-            sp.append(Generate2DPoint(None,None,xcmax,ycmax,0,-ycmax, diag=-1, fill=1))
+            sp.append(Generate2DPoint(None,None,xcmax,ycmax,-xcmax,-ycmax, diag=-1, fill=1))
         shape.append(sp)
         sl=[]
         for j in range(points):

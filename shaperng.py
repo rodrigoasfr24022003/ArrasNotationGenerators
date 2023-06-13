@@ -95,7 +95,7 @@ def Generate2DPoint(FixedX=None, FixedY=None, xmax=xcmax, ymax=ycmax, xmin=-xcma
 f=open('polygon3.txt','w')
 for i in range(256):
     shape=[]
-    sym=s.choices(['doublediag','octangular'],weights=[3,3],k=1)[0] #e='none','2wayx','2wayy','double2way','diag','antidiag', w=1,4,4,4,3,3,
+    sym=s.choices(['none','2wayx','2wayy','double2way','diag','antidiag','doublediag','octangular'],weights=[1,4,4,4,3,3,3,3],k=1)[0]
     shape.append(sym)
     points=s.randint(4,pointsmax)
     if sym=='none':

@@ -5,8 +5,8 @@ Used to define regular polygons for `awpshapegen.py`.
 ## `awpshapegen.py`
 Very crude generator for AWP shapes. It only generates radially around a central shape. **It only generates a text-based notation for them, not the actual shapes.**
 ## `fraggenerator.py`
-Generates [UFrS](https://docs.google.com/document/d/1eoHn_cpTHu5-zgXUkg0yKcTyvPJrL5OpAUrj0nCzsOg/edit?usp=sharing) frags. Please don't add frags from `fraggenerator.py` to your private servers without consulting me beforehand. My Discord username is `Rodrigo of Rodrigonia#8913` and my email is `rodrigo.rodrigues.rr.acc2@gmail.com`.
+Generates a text-based notation for [UFrS](https://docs.google.com/document/d/1eoHn_cpTHu5-zgXUkg0yKcTyvPJrL5OpAUrj0nCzsOg/edit?usp=sharing) frags. Please don't add frags from `fraggenerator.py` to your private servers without consulting me beforehand. My Discord username is `Rodrigo of Rodrigonia#8913` and my email is `rodrigo.rodrigues.rr.acc2@gmail.com`.
 ## `shaperng.py`
 Generates shapes. **It only generates a text-based notation for them, not the actual shapes.**
 ## `rsbn_gen.py`
-Generates [RSBN](https://docs.google.com/document/d/1P9SEpsK_csCMBRByD0KlvSDN8HmTNOrH_UIxlnWvgZA/edit?usp=sharing) patterns. **WARNING: This generator is recursive!**
+Generates text notation for [RSBN](https://docs.google.com/document/d/1P9SEpsK_csCMBRByD0KlvSDN8HmTNOrH_UIxlnWvgZA/edit?usp=sharing) patterns. **WARNING: This generator is recursive!**

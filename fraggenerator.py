@@ -11,7 +11,11 @@ for i in range(0,100):
     def genAmmo():
         return [s.choice(['bullet','drone','swarm_drone','bee','overdrive','revitalist','navyist','whirlybird','trap','block','boomerang','sikerblock','laserline','ionlaser','apbullet','shellingbullet','missile','empmissile','nuke','empnuke','railgunslug','heavynuke','heavyempnuke','donutbullet','kbbullet','oapp_heatseeker','oappblackhole','ceptioner','ceptionist','missile','bomb','stabilizer','pillbox','trapboxes','taurusportal','minion','sunchip','oxyprojectile','laserblast','shrapnelnuke']),fractions.Fraction(s.randint(1,60),6),fractions.Fraction(s.randint(1,60),6)]
     def genEffect():
-        return[s.choices(['none','slide '+str(s.randint(5,77))+' of the Tank Effect Sheet','Pepperspray'],weights=[5,72,1],k=1)[0],'Level: '+str(s.randint(1,12)),'Time: '+str(s.randint(1,3600))+' s']
+        slideNum=s.randint(5,77)
+        if slideNum != 74:
+            return[s.choices(['none','slide '+str(slideNum)+' of the Tank Effect Sheet','Pepperspray'],weights=[5,72,1],k=1)[0],'Level: '+str(s.randint(1,12)),'Time: '+str(s.randint(1,3600))+' s']
+        else:
+            return[s.choices(['none',s.choice(['Blazing Brand','Cold Snap']),'Pepperspray'],weights=[5,72,1],k=1)[0],'Level: '+str(s.randint(1,12)),'Time: '+str(s.randint(1,3600))+' s']
     def genPattern():
         def ConcentricCircleGen():
             l=[]
